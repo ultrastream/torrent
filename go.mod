@@ -1,6 +1,6 @@
 module github.com/anacrolix/torrent
 
-go 1.16
+go 1.18
 
 require (
 	github.com/RoaringBitmap/roaring v0.9.4
@@ -36,6 +36,7 @@ require (
 	github.com/pion/webrtc/v3 v3.0.32
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
+	github.com/tidwall/btree v0.7.2-0.20211211132910-4215444137fc
 	go.etcd.io/bbolt v1.3.6
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	zombiezen.com/go/sqlite v0.8.0
