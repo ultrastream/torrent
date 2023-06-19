@@ -60,7 +60,7 @@ func TestHolepunchConnect(t *testing.T) {
 	cfg.Logger = cfg.Logger.WithContextText("leecher")
 	// This way the leecher leecher will still try to use this peer as a relay, but won't be told
 	// about the seeder via PEX.
-	//cfg.DisablePEX = true
+	// cfg.DisablePEX = true
 	cfg.Debug = true
 	leecher, err := NewClient(cfg)
 	require.NoError(t, err)
@@ -74,7 +74,7 @@ func TestHolepunchConnect(t *testing.T) {
 	cfg.Debug = true
 	cfg.NominalDialTimeout = time.Second
 	cfg.Logger = cfg.Logger.WithContextText("leecher-leecher")
-	//cfg.DisableUTP = true
+	// cfg.DisableUTP = true
 	leecherLeecher, _ := NewClient(cfg)
 	require.NoError(t, err)
 	defer leecherLeecher.Close()
@@ -160,7 +160,7 @@ func TestTcpSimultaneousOpen(t *testing.T) {
 	makeDialer := func(localPort int, remoteAddr string) func() (net.Conn, error) {
 		dialer := net.Dialer{
 			LocalAddr: &net.TCPAddr{
-				//IP:   net.IPv6loopback,
+				// IP:   net.IPv6loopback,
 				Port: localPort,
 			},
 		}
@@ -201,7 +201,7 @@ func randDynamicPort() int {
 	return randIntInRange(49152, 65535)
 }
 
-func randPortPair() (first int, second int) {
+func randPortPair() (first, second int) {
 	first = randDynamicPort()
 	for {
 		second = randDynamicPort()

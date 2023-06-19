@@ -106,7 +106,7 @@ func TestConnectionIdMismatch(t *testing.T) {
 		// This host seems to return `Connection ID missmatch.\x00` every 2 minutes or so under
 		// heavy use.
 		Host: "tracker.torrent.eu.org:451",
-		//Host:    "tracker.opentrackr.org:1337",
+		// Host:    "tracker.opentrackr.org:1337",
 		Network: "udp",
 	})
 	c := qt.New(t)
@@ -126,7 +126,7 @@ func TestConnectionIdMismatch(t *testing.T) {
 		}
 		rand.Read(ar.InfoHash[:])
 		rand.Read(ar.PeerId[:])
-		//spew.Dump(ar)
+		// spew.Dump(ar)
 		wg.Add(1)
 		go func() {
 			defer wg.Done()

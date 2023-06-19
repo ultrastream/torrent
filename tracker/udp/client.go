@@ -115,7 +115,7 @@ func (cl *Client) doConnectRoundTrip(ctx context.Context) (err error) {
 	}
 	cl.connId = connResp.ConnectionId
 	cl.connIdIssued = time.Now()
-	//log.Printf("conn id set to %x", cl.connId)
+	// log.Printf("conn id set to %x", cl.connId)
 	return
 }
 
@@ -163,7 +163,7 @@ func (cl *Client) writeRequest(
 	}
 	buf.Write(body)
 	_, err = cl.Writer.Write(buf.Bytes())
-	//log.Printf("sent request with conn id %x", connId)
+	// log.Printf("sent request with conn id %x", connId)
 	return
 }
 

@@ -75,7 +75,6 @@ func (pex PeerExtensionBits) String() string {
 		tags = append(tags, fmt.Sprintf("%v unknown", unknownCount))
 	}
 	return fmt.Sprintf("%v (%s)", pexHex, strings.Join(tags, ", "))
-
 }
 
 func NewPeerExtensionBytes(bits ...ExtensionBit) (ret PeerExtensionBits) {

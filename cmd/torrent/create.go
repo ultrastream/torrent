@@ -24,7 +24,7 @@ func create() (cmd bargle.Command) {
 		CreatedBy         string   `name:"c" help:"created by"`
 		InfoName          *string  `name:"i" help:"override info name (defaults to ROOT)"`
 		PieceLength       tagflag.Bytes
-		Url               []string `name:"u" help:"add webseed url"`
+		Url               []string `name:"u" help:"add web seed url"`
 		Private           *bool
 		Root              string `arg:"positional"`
 	}

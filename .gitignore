@@ -1,3 +1,6 @@
 .idea
 *-run.gob
 .envrc*
+**/*.db
+**/*.rgb
+**/bin

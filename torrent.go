@@ -1647,7 +1647,7 @@ func (t *Torrent) onWebRtcConn(
 		DataChannelContext: dcc,
 	}
 	peerRemoteAddr := netConn.RemoteAddr()
-	//t.logger.Levelf(log.Critical, "onWebRtcConn remote addr: %v", peerRemoteAddr)
+	// t.logger.Levelf(log.Critical, "onWebRtcConn remote addr: %v", peerRemoteAddr)
 	if t.cl.badPeerAddr(peerRemoteAddr) {
 		return
 	}
@@ -2404,6 +2404,10 @@ func (t *Torrent) addHalfOpen(addrStr string, attemptKey *PeerInfo) {
 	t.cl.numHalfOpen++
 }
 
+func (t *Torrent) Stop() bool {
+	return t.closed.Set()
+}
+
 // Start the process of connecting to the given peer for the given torrent if appropriate. I'm not
 // sure all the PeerInfo fields are being used.
 func initiateConn(
@@ -2648,7 +2652,7 @@ func (t *Torrent) cancelRequest(r RequestIndex) *Peer {
 		p.cancel(r)
 	}
 	// TODO: This is a check that an old invariant holds. It can be removed after some testing.
-	//delete(t.pendingRequests, r)
+	// delete(t.pendingRequests, r)
 	if _, ok := t.requestState[r]; ok {
 		panic("expected request state to be gone")
 	}

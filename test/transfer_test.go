@@ -160,7 +160,7 @@ func testSeedAfterDownloading(t *testing.T, disableUtp bool) {
 	// error decoding. However it shouldn't because a client should only be receiving pieces sized
 	// to the chunk size it expects.
 	cfg.DisablePEX = true
-	//cfg.Debug = true
+	// cfg.Debug = true
 	cfg.Logger = log.Default.WithContextText("leecher")
 	leecher, err := torrent.NewClient(cfg)
 	require.NoError(t, err)
