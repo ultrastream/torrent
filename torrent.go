@@ -229,6 +229,10 @@ func (t *Torrent) Closed() events.Done {
 	return t.closed.Done()
 }
 
+func (t *Torrent) Stop() bool {
+	return t.closed.Set()
+}
+
 // KnownSwarm returns the known subset of the peers in the Torrent's swarm, including active,
 // pending, and half-open peers.
 func (t *Torrent) KnownSwarm() (ks []PeerInfo) {
